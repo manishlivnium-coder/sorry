@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#130f1d">
+  <meta name="description" content="Dil se likha ek paighaam.">
+  <title>Tumhare liye</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="stage" id="stage">
+    <div class="scene" aria-hidden="true">
+      <div class="scene__glow"></div>
+      <div class="scene__orb scene__orb--one"></div>
+      <div class="scene__orb scene__orb--two"></div>
+      <div class="scene__petals">
+        <span>♡</span><span>✦</span><span>♡</span><span>✧</span><span>♡</span><span>✦</span>
+      </div>
+      <div class="scene__stars"></div>
+    </div>
+
+    <header class="topline" aria-label="Tumhare liye">
+      <span class="topline__mark" aria-hidden="true">✦</span>
+      <span>EK DIL SE LIKHA PAIGHAAM</span>
+      <span class="topline__mark" aria-hidden="true">✦</span>
+    </header>
+
+    <div class="progress" id="progress" role="progressbar" aria-label="Paighaam mein aapki jagah" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" hidden>
+      <i id="bar"></i>
+    </div>
+
+    <section class="screen intro-card" id="intro" aria-labelledby="introTitle">
+      <div class="heart-seal" aria-hidden="true"><span>♥</span></div>
+      <p class="eyebrow">KUCH BAATEIN DIL SE</p>
+      <h1 id="introTitle"></h1>
+      <p class="sub" id="introSub"></p>
+      <div class="intro-note"><span aria-hidden="true">☾</span> Aaram se padhna. Yeh paighaam tumhare waqt par hai.</div>
+      <button class="btn btn--primary" id="start" type="button">
+        <span></span><b>Shuru karo</b><span class="btn__arrow" aria-hidden="true">↗</span>
+      </button>
+      <button class="text-button" id="restartFromTop" type="button" hidden>Shuru se padhein</button>
+    </section>
+
+    <section class="screen reader-card" id="reader" aria-label="Paighaam" hidden>
+      <div class="reader-meta">
+        <span class="eyebrow">DIL KI BAAT</span>
+        <span class="counter" id="counter">01 / 01</span>
+      </div>
+      <div class="reader-rule" aria-hidden="true"><span>✦</span></div>
+      <p class="line" id="line" aria-live="polite" aria-atomic="true"></p>
+      <div class="answer" id="answer" aria-label="Aapka jawaab">
+        <button class="btn btn--primary" id="yes" type="button"></button>
+        <button class="btn btn--quiet" id="wait" type="button"></button>
+      </div>
+      <p class="swipe-note" aria-hidden="true">← SWIPE YA BUTTONS SE AAGE BADHEIN →</p>
+    </section>
+
+    <section class="screen reply-card" id="reply" aria-live="polite" hidden>
+      <div class="reply-heart" aria-hidden="true">♥</div>
+      <p class="eyebrow" id="replyEyebrow">TUMHARA JAWAAB</p>
+      <p class="line key" id="replyText"></p>
+      <button class="btn btn--quiet" id="readAgain" type="button">Paighaam dobara padhein <span aria-hidden="true">↺</span></button>
+      <div class="heart-burst" id="heartBurst" aria-hidden="true"></div>
+    </section>
+
+    <nav class="tools" id="tools" aria-label="Paighaam controls" hidden>
+        <button class="tool-button" id="back" type="button" aria-label="Pichhla paragraph" title="Pichhla paragraph (←)">
+        <span aria-hidden="true">←</span><span class="tool-label">PEECHHE</span>
+      </button>
+      <p id="hint">Tap karo ya space dabao</p>
+      <div class="tool-actions">
+        <button class="tool-button tool-button--auto" id="auto" type="button" aria-pressed="false" title="Auto read chalu ya band karo">
+          <span aria-hidden="true">◷</span><span id="autoLabel">AUTO</span>
+        </button>
+        <button class="tool-button tool-button--next" id="next" type="button" aria-label="Agla paragraph" title="Agla paragraph (→)">
+          <span class="tool-label">AAGE</span><span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </nav>
+  </main>
+
+  <script src="message.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
